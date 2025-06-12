@@ -1,0 +1,4 @@
+﻿namespace madan.MVC.Models
+{
+   
+}

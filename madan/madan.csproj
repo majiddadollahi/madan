@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-madan-4c575d9a-2eb3-4373-b523-6887494ab2cb</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.5" NoWarn="NU1605" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="9.0.5" NoWarn="NU1605" />
+    <PackageReference Include="Microsoft.Identity.Web" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Identity.Web.UI" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Identity.Web.DownstreamApi" Version="3.0.0" />
+  </ItemGroup>
+
+</Project>
