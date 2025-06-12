@@ -1,0 +1,30 @@
+﻿<li class="dropdown notification-list topbar-dropdown">
+    <a id="loadInboxMessagesInNotifierBox" class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+        <i class="fe-bell noti-icon"></i>
+        <span class="badge bg-danger rounded-circle noti-icon-badge" id="inboxMessageCounter">0</span>
+    </a>
+    <div class="dropdown-menu dropdown-menu-end dropdown-lg">
+
+        <!-- item-->
+        <div class="dropdown-item noti-title">
+            <h5 class="m-0">
+                <span class="float-end">
+                    <a asp-area="" asp-action="index" asp-controller="Message" class="text-primary">
+                        <small>مدیریت پیام ها</small>
+                    </a> 
+                </span>پیام های دریافتی
+            </h5>
+        </div>
+
+        <div class="noti-scroll" data-simplebar id="userInboxMessages" style="max-height:600px;overflow:auto">
+
+        </div>
+
+        <!-- All-->
+        <a  asp-area="" asp-action="index" asp-controller="Message" class="dropdown-item text-center text-primary notify-item notify-all">
+           نمایش همه
+            <i class="fe-arrow-right"></i>
+        </a>
+
+    </div>
+</li>

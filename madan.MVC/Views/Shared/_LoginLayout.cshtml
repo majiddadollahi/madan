@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>@ViewData["Title"] - PCS V 1.0.0</title>
+    <link rel="manifest" href="/CoreUi/assets/favicon/manifest.json">
+    <meta name="theme-color" content="#ffffff">
+    <link href="/bootstrap-5.0.2-dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="/CoreUi/vendors/@@coreui/icons/css/free.min.css" rel="stylesheet" />
+    <link href="/CoreUi/coreui/css/style.css" rel="stylesheet">
+    <link href="/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="/smartmenu/sm-core-css.css" rel="stylesheet" />
+    <link href="/smartmenu/_sm-mint/sm-mint.css" rel="stylesheet" />
+    <link href="/jstree/themes/default/style.min.css" rel="stylesheet" />
+    <link href="/fonts/site-font.css" rel="stylesheet" />
+
+    <style>
+        .carousel-item {
+            height: 100vh;
+            min-height: 350px;
+            background: no-repeat center center scroll;
+            background-position: top;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        .login-Section {
+            position: fixed;
+            height: 500px;
+            width: 600px;
+            /*background-color:rgb(0,0,255,0.5);*/
+            z-index: 9999;
+            top: 0px;
+            right: 0px;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="background-image: url('../images/login/slider2.png')">
+                    <div class="carousel-caption">
+                        <h5>شرکت صنایع پتروشیمی خلیج فارس </h5>
+                      @*  <p>Some representative placeholder content for the first slide.</p>*@
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('../images/login/slider2.jpg')">
+                    <div class="carousel-caption">
+                        <h5>شرکت پتروشیمی بوعلی سینا</h5>
+                       @* <p>Some representative placeholder content for the second slide.</p>*@
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('../images/login/slider2.png')">
+                    <div class="carousel-caption">
+                        <h5>سامانه کنترل تولید شرکت پتروشیمی بوعلی سینا </h5>
+                       @* <p>Some representative placeholder content for the third slide.</p>*@
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </header>
+    <div class="login-Section" style="">
+        <div class="card p-4" style="background-color:rgba(0,0,100,0.1)">
+        @RenderBody();
+        </div>
+    </div>
+</body>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/popper/dist/umd/popper.js"></script>
+<script src="~/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+<script src="~/CoreUi/coreui/vendors/@@coreui/coreui/js/coreui.bundle.min.js"></script> <!--[if IE]><!-->
+<script src="~/CoreUi/coreui/vendors/@@coreui/icons/js/svgxuse.min.js"></script>
+<script src="~/smartmenu/jquery.smartmenus.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('#main-menu').smartmenus({
+            subMenusSubOffsetX: 6,
+            subMenusSubOffsetY: -8
+        });
+        var toastLiveExample = $('.toast')
+        for (var i = 0; i < toastLiveExample.length; i++) {
+
+            var toast = new bootstrap.Toast(toastLiveExample[i]);
+            toast.show()
+        }
+    });
+</script>
+<script src="~/lib/persian-rangedatepicker/js/moment.min.js"></script>
+<script src="~/lib/persian-rangedatepicker/js/moment-jalaali.js"></script>
+<script src="~/lib/persian-rangedatepicker/js/daterangepicker-fa-ex.js"></script>
+<script src="~/lib/persian-rangedatepicker/js/jquery.mask.min.js"></script>
+<script src="~/lib/persian-rangedatepicker/js/ccs-daterangepicker.js"></script>
+<script src="~/js/site.js"></script>
+<partial name="~/Views/Shared/_ValidationScriptsPartial.cshtml" />
+
+</html>
+

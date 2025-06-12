@@ -1,31 +1,213 @@
-html {
-  font-size: 14px;
+﻿
+.input-data th {
+    background-color: #1b6ec2;
+    color: white;
+   /* min-width:100px;*/
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+
+
+.input-validation-error
+{
+    border:2px solid red;
+}
+.clean-input {
+    position: absolute;
+    left: 40px;
+    top: 2.6rem;
+    cursor: pointer;
+}
+.checkmark-container {
+    display: block;
+    position: relative;
+    padding-left: 28px;
+    margin: 1px;
+    cursor: pointer;
+   /* font-size: 16px;*/
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align:right;
+}
+.checkmark-container-title {
+    position: relative;
+    right: 30px
+}
+/* Hide the browser's default checkbox */
+.checkmark-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+  /*  right: 0;*/
+    height: 20px;
+    width: 20px;
+    border-radius:50%;
+    background-color: #eee;
+    border:1px solid #ccc;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+/* On mouse-over, add a grey background color */
+.checkmark-container:hover input ~ .checkmark {
+    background-color: #ccc;
 }
 
-body {
-  margin-bottom: 60px;
+/* When the checkbox is checked, add a blue background */
+.checkmark-container input:checked ~ .checkmark {
+    background-color: #1abd08;
+    border: 1px solid #0366d6;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+/* Show the checkmark when checked */
+.checkmark-container input:checked ~ .checkmark:after {
+    display: block;
 }
+
+/* Style the checkmark/indicator */
+.checkmark-container .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.currsor-pointer
+{
+   cursor:pointer;
+}
+.card-footer  {
+    text-align: left;
+    padding: 0.5rem 1rem;
+}
+.card-body
+{
+    overflow:auto;
+}
+.modal-body-scolable {
+    height: 80vh;
+    overflow-y: auto;
+}
+.pcs-hide{
+    display:none;
+}
+.p100-75 {
+    animation-name: animate-100-75;
+    animation-duration: 0.5s;
+    width: 75%;
+}
+
+@keyframes animate-100-75 {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 75%;
+    }
+}
+
+.p75-100 {
+    animation-name: animate-75-100;
+    animation-duration: 0.5s;
+    width: 100%;
+}
+
+@keyframes animate-75-100 {
+    from {
+        width: 75%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.pcs-show {
+    display: inline-block;
+}
+hr.separator {
+    border-top: 1px dashed #bbb;
+}
+
+.b-separator,.b-sep {
+   border-bottom: 1px dashed #bbb ;
+}
+.t-separator,.t-sep {
+    border-top: 1px dashed #bbb;
+    margin-top:2px;
+}
+.rotated-r-90 {
+    transform: rotate(90deg); /* Equal to rotateZ(45deg) */
+    background-color: pink;
+}
+.r-rows {
+    border: 5px solid green;
+    border-radius: 50% 0 0 50% /5em
+}
+
+.l-rows {
+    border: 5px solid green;
+    border-radius: 0 50% 50% 0/5em
+}
+
+
+div.arrow-right {
+    padding: 3px;
+    color: #fff;
+    background-color: green;
+    height: 0;
+    position: relative;
+}
+
+    div.arrow-right:after {
+        content: '';
+        position: absolute;
+        top: -4px;
+        right: -15px;
+        width: 0;
+        height: 0;
+        border: 8px solid transparent;
+        border-left: 10px solid green;
+    }
+
+div.arrow-left {
+    padding: 3px;
+    color: #fff;
+    background-color: green;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    min-width: 50px;
+    margin-left: 4px;
+    position: relative;
+}
+
+    div.arrow-left:before {
+        content: ' ';
+        height: 0;
+        position: absolute;
+        width: 0;
+        left: -15px;
+        top: -4px;
+        border: 8px solid transparent;
+        border-right-color: green;
+    }

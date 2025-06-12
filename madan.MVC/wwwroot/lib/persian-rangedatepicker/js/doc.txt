@@ -1,0 +1,28 @@
+﻿ccs-datepicker-selector:
+	.jalali-datepicker
+
+$(function () {
+    ccsDateRangePicker.initAllDatepickers();
+})
+
+ccs-datepicker-options:
+	data-jalaali = "true"
+	data-time-picker = "false"
+	data-display-format= 'jYYYY/jMM/jDD'
+	data-miladi-init-value = "1987/05/03 1:12"
+	data-miladi-init-value-format = "YYYY/MM/DD"
+	data-hidden-output-id = "testId"
+    data-hidden-output-name = "testName"
+	data-hidden-output-format = "YYYY/MM/DD"
+	data-mask = "0000/00/00"
+	data-select-on-focus = "true"
+	data-auto-update-input = "false"
+    data-dropdown-min-year-offset = "100"
+    data-dropdown-max-year-offset = "100"
+    data-on-apply = "sendInformation()"
+    data-on-show = "sendInformation()"
+    data-on-hide = "sendInformation()"
+    data-on-showCalendar = "sendInformation()"
+    data-on-hideCalendar = "sendInformation()"
+    data-on-cancel = "sendInformation()"
+	data-convertable = "false"

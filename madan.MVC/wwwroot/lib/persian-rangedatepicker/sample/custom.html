@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="assets/css/daterangepicker.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="assets/css/datepicker-theme.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .calendar-time * {
+            display: inline-block;
+            padding: 0;
+            direction: ltr;
+        }
+
+        .form-control, input {
+            direction: ltr;
+        }
+    </style>
+</head>
+<body style="direction:rtl">
+    <div class="container">
+        <h3>انتخاب تاریخ</h3>
+        <br />
+        <div class="well">
+            <div class="row">
+                <div class="col-sm-3">
+                    <label class="control-label">تاریخ </label>
+                    <input type="text" class="form-control jalali-datepicker" data-container="body" data-placement="top" title="salam" 
+                           data-time-picker = "true"
+                           
+                           data-miladi-init-value = "10/13/2001 11:12 PM"
+                            data-miladi-init-value-format = "MM/DD/YYYY HH:mm a"
+                           data-hidden-output-id = "miladi"
+                           data-hidden-output-format = "YYYY/MM/DD"
+                           data-select-on-focus = "true"
+                           data-dropdown-min-year-offset = "1"
+                           data-dropdown-max-year-offset = "1"
+                    />
+
+                    <!-- 
+                        
+                        
+                        data-min-date="1397/03/10"
+                           data-max-date="1397/04/10"
+                        data-display-format= 'jYYYY/jMM/jDD'
+                    -->
+                </div>
+                <div class="col-sm-3">
+                    <label class="control-label">تاریخ میلادی</label>
+                    <input id="miladi" type="text" class="form-control" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../js/moment.min.js"></script>
+    <script type="text/javascript" src="../js/moment-jalaali.js"></script>
+    <script type="text/javascript" src="../js/daterangepicker-fa-ex.js"></script>
+    <script type="text/javascript" src="../js/jquery.mask.min.js"></script>
+    <script type="text/javascript" src="../js/ccs-daterangepicker.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            ccsDateRangePicker.initAllDatepickers();
+        });
+    </script>
+</body>
+</html>

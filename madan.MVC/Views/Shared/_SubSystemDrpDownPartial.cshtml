@@ -1,0 +1,30 @@
+﻿<li class="dropdown d-none d-lg-inline-block topbar-dropdown">
+    <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+        <i class="fe-grid noti-icon"></i>
+    </a>
+    <div class="dropdown-menu dropdown-menu-end">
+
+        <auth key="pcs.rep">
+            <a asp-area="rep" asp-controller="Report" asp-action="Index" class="dropdown-item">
+                <img src="~/images/dashboard/rep.png" alt="سیستم گزارشات" class="me-1" height="12"> <span class="align-middle">سیستم گزارشات</span>
+            </a>
+        </auth>
+        <auth key="pcs.de">
+            <a asp-area="de" asp-controller="Daily" asp-action="Index" class="dropdown-item">
+                <img src="~/images/dashboard/de.png" alt="ورود اطلاعات" class="me-1" height="12"> <span class="align-middle">ورود اطلاعات</span>
+            </a>
+
+        </auth>
+        <auth key="pcs.set">
+            <a asp-area="set" asp-controller="Calculation" asp-action="Index" class="dropdown-item">
+                <img src="~/images/dashboard/cal.png" alt="تنظیمات" class="me-1" height="12"> <span class="align-middle">تنظیمات</span>
+            </a>
+
+        </auth>
+        <auth key="pcs.acc">
+            <a asp-area="acc" asp-controller="User" asp-action="Index" class="dropdown-item">
+                <img src="~/images/dashboard/account.png" alt="مدیریت کاربران" class="me-1" height="12"> <span class="align-middle">مدیریت کاربران</span>
+            </a>
+        </auth>
+    </div>
+</li>

@@ -4,7 +4,12 @@ using madan.MVC.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+#if DEBUG
+builder.Services.AddControllersWithViews()
+    .AddRazorRuntimeCompilation();
+#else
 builder.Services.AddControllersWithViews();
+#endif
 
 // Add DbContext configuration
 builder.Services.AddDbContext<ApplicationDbContext>(options =>

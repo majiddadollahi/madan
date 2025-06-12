@@ -2,50 +2,356 @@
 <html lang="en" dir="rtl">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - madan.MVC</title>
-    <script type="importmap"></script>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/madan.MVC.styles.css" asp-append-version="true" />
-    @await RenderSectionAsync("Styles", required: false)
+    <title>@ViewData["Title"] - سامانه ؟؟؟؟؟؟</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+
+    <link rel="shortcut icon" href="/minton/assets/images/favicon.ico">
+    <!-- App css -->
+    <link href="/minton/assets/css/corporate/bootstrap-rtl.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
+    <link href="/minton/assets/css/corporate/app-rtl.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
+
+    <link href="/minton/assets/css/corporate/bootstrap-dark-rtl.min.css" rel="stylesheet" type="text/css" id="bs-dark-stylesheet" />
+    <link href="/minton/assets/css/corporate/app-dark-rtl.min.css" rel="stylesheet" type="text/css" id="app-dark-stylesheet" />
+
+    <link href="/minton/assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <link href="/minton/assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <link href="/minton/assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <link href="/minton/assets/libs/datatables.net-select-bs5/css//select.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <!-- plugin css -->
+    <link href="/lib/jstree/themes/default/style.min.css" rel="stylesheet" />
+    @RenderSection("StyleUP", required: false)
+
+
+    <link href="/minton/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+    <link href="/minton/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
+
+    <link href="/minton/assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+    <!-- icons -->
+    <link href="/minton/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="/lib/persian-rangedatepicker/css/daterangepicker.css" rel="stylesheet" />
+    <link href="/lib/persian-rangedatepicker/css/datepicker-ccs-theme.css" rel="stylesheet" />
+    <link href="/lib/select2/css/select2.min.css" rel="stylesheet" />
+    <link href="/fonts/iranyekan/farsi_numerals_(non standard)/webfonts/css/style.css" rel="stylesheet" />
+
+    <link href="/css/site.css" rel="stylesheet" />
+
+    @RenderSection("Styles", required: false)
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+
+<body class="loading" data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "white", "size": "default", "showuser": false}, "topbar": {"color": "light"}, "showRightSidebarOnPageLoad": false}'>
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        <!-- Topbar Start -->
+        <div class="navbar-custom">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">madan.MVC</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+                
+                <ul class="list-unstyled topnav-menu float-end mb-0">
+                    
+                    <li class="dropdown d-inline-block d-lg-none">
+                        <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <i class="fe-search noti-icon"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-lg dropdown-menu-end p-0">
+                            <form class="p-3">
+                                <input type="text" class="form-control" placeholder="Search ..." aria-label="Search">
+                            </form>
+                        </div>
+                    </li>
+
+                    <li class="dropdown d-none d-lg-inline-block">
+                        <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-bs-toggle="fullscreen" href="#">
+                            <i class="fe-maximize noti-icon"></i>
+                        </a>
+                    </li>
+
+                   @* <partial name="/Views/Shared/_SubSystemBoxPartial.cshtml" />*@
+                    @* <partial name="/Views/Shared/_SubSystemDrpDownPartial.cshtml" /> *@
+
+                    <partial name="/Views/Shared/_LoginPartial.cshtml" />
+
+                    
+                    <li class="dropdown notification-list">
+                        <a href="javascript:void(0);" class="nav-link right-bar-toggle waves-effect waves-light">
+                            <i class="fe-settings noti-icon"></i>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <!-- LOGO -->
+                <div class="logo-box">
+                    <a href="#" class="logo logo-dark text-center">
+                        <span class="logo-sm">
+                            <img src="/images/logo-main.png" alt="" height="24">
+                        </span>
+                        <span class="logo-lg">
+                            <img src="/images/logo-main.png" alt="" height="20">
+                            <!-- <span class="logo-lg-text-light">M</span> -->
+                        </span>
+                    </a>
+
+                    <a href="#" class="logo logo-light text-center">
+                        <span class="logo-sm">
+                            <img src="/images/logo-main.png" alt="" height="24">
+                        </span>
+                        <span class="logo-lg">
+                            <img src="/images/logo-main.png" alt="" height="20">
+                        </span>
+                    </a>
                 </div>
+                
+                <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
+                    <li>
+                        <button class="button-menu-mobile waves-effect waves-light">
+                            <i class="fe-menu"></i>
+                        </button>
+                    </li>
+
+                    <li>
+                        <!-- Mobile menu toggle (Horizontal Layout)-->
+                        <a class="navbar-toggle nav-link" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                        <!-- End mobile menu toggle-->
+                    </li>
+
+                </ul>
+                <div class="clearfix"></div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+        </div>
+        <!-- end Topbar -->
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left-side-menu">
+
+            <!-- LOGO -->
+            <div class="logo-box">
+                <a asp-action="index" asp-controller="home" asp-area="" class="logo logo-dark text-center">
+                    <span class="logo-sm bg-light">
+                        <span class="bg-light">
+                            <img src="/images/logo-main.png" alt="" height="40">
+                        </span>
+                    </span>
+                    <span class="logo-lg bg-light">
+                        <img src="/images/logo-main.png" alt="" height="40">
+
+                    </span>
+                </a>
+
+                <a asp-action="index" asp-controller="home" asp-area="" class="logo logo-light text-center">
+                    <span class="logo-sm ">
+                        <span class=" bg-light">
+                            <img src="/images/logo-main.png" alt="" height="40">
+                        </span>
+                    </span>
+                    <span class="logo-lg ">
+                        <img src="/images/logo-main.png" alt="" height="40">
+                    </span>
+                </a>
+            </div>
+
+            <div class="h-100" data-simplebar>
+
+                <partial name="/Views/Shared/_UserInfoPartial.cshtml" />
+
+
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <ul id="side-menu">
+                        <li>
+                            <a asp-area="" asp-controller="Product" asp-action="index">
+                               @*  <i class="fa fa-home "></i>  *@
+                                محصولات
+                            </a>
+
+                        </li>
+                        @RenderSection("SidebarMenu",required:false)
+
+                    </ul>
+
+                </div>
+                <!-- End Sidebar -->
+
+                <div class="clearfix"></div>
+
+            </div>
+            <!-- Sidebar -left -->
+
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+
+                <!-- Start Content-->
+                <div class="container-fluid p-2 bg-white mt-2" >
+
+                    <!-- start page title -->
+                    <div class="row" style="display:none">
+                        <div class="col-12">
+                            <div class="page-title-box mb-1 p-1">
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        
+                                        @RenderSection("Breadcrumb", required: false)
+
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+                    @RenderBody()
+
+                </div> <!-- container -->
+
+            </div> <!-- content -->
+            <!-- Footer Start -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            &copy; مجید داداللهی <script>document.write(1404)</script>  <a href="">http://dadollahi.ir</a>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-md-end footer-links d-none d-sm-block">
+                                <a href="javascript:void(0);">درباره ما</a>
+                                <a href="javascript:void(0);">راهنما</a>
+                                <a href="javascript:void(0);">تماس با ما</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end Footer -->
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+
+    </div>
+    <!-- END wrapper -->
+    <!-- Right Sidebar -->
+    <partial name="/Views/Shared/_RightBar.cshtml" />
+
+    <!-- /Right-bar -->
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay"></div>
+
+
+    <div id="toast-Container" class="position-fixed top-0 start-0  " style="z-index: 100000;left:1px" dir="ltr">
+        @{
+
+            @* @inject INotifierService _nofifier;
+            var notifers = _nofifier.ReadAndRemoveAll();
+            foreach (var item in notifers)
+            {
+                var bgclass = item.Type == PCS.Core.Domain.NofierEnum.Succeed ? "bg-success " :
+                item.Type == PCS.Core.Domain.NofierEnum.Info ? "bg-info" :
+                item.Type == PCS.Core.Domain.NofierEnum.Error ? "bg-danger" :
+                item.Type == PCS.Core.Domain.NofierEnum.Warrning ? "bg-warning" : "";
+
+                var textColor = string.IsNullOrWhiteSpace(bgclass) ? "" : "text-white";
+               
+                <div class="toast  @bgclass @textColor" role="alert" aria-live="assertive" aria-atomic="true" >
+                    <div class="px-3 py-2 text-right" data-bs-dismiss="toast" >
+                        <span class="toast-body ">
+                            @item.Message
+                        </span>
+                        <span class="float-left">
+                            <i class=" fa fa-close float-end" data-bs-dismiss="toast"></i>
+                        </span>
+                    </div>
+                </div> *@
+
+        }
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - madan.MVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    <!-- Vendor js -->
+    <script src="/minton/assets/js/vendor.min.js"></script>
+    <script src="/minton/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="/minton/assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="/minton/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/minton/assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+    <script src="/minton/assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="/minton/assets/libs/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
+    <script src="/minton/assets/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="/minton/assets/libs/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="/minton/assets/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="/minton/assets/libs/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="/minton/assets/libs/datatables.net-select/js/dataTables.select.min.js"></script>
+    <script src="/minton/assets/libs/tippy.js/tippy.all.min.js"></script>
+
+
+  
+
+
+    @RenderSection("ScriptUP", required: false)
+    <!-- Dashboard init-->
+    <!-- Sweet Alerts js -->
+    <script src="/minton/assets/libs/sweetalert2/sweetalert2.min.js"></script>
+
+    <!-- Sweet alert init js-->
+    <script src="/minton/assets/js/pages/sweet-alerts.init.js"></script>
+
+    <!-- Tost-->
+    <script src="/minton/assets/libs/jquery-toast-plugin/jquery.toast.min.js"></script>
+
+    <!-- toastr init js-->
+    @*<script src="/minton/assets/js/pages/toastr.init.js"></script>*@
+
+
+    <!-- App js -->
+    <script src="/minton/assets/js/app.min.js"></script>
+    <script src="/lib/select2/js/select2.min.js"></script>
+    <script src="/lib/persian-rangedatepicker/js/moment.min.js"></script>
+    <script src="/lib/persian-rangedatepicker/js/moment-jalaali.js"></script>
+    <script src="/lib/persian-rangedatepicker/js/daterangepicker-fa-ex.js"></script>
+    <script src="/lib/persian-rangedatepicker/js/jquery.mask.min.js"></script>
+    <script src="/lib/persian-rangedatepicker/js/ccs-daterangepicker.js"></script>
+    <script src="/lib/html2convas/html2canvas.min.js"></script>
+
+   <script src="/lib/jstree/jstree.min.js"></script>
+    <script src="/lib/jstree/jstree.min.js"></script>
+    <script src="/zingchart/zingchart.min.js"></script>
+    <script src="/js/chart/pcschart.line.js"></script>
+    <script src="/js/chart/pcschart.bar.js"></script>
+    <script src="/js/chart/pcschart.mix.js"></script>
+    <script src="/js/chart/pcschart.area.js"></script>
+
+    <script src="/js/chart/pcschart.js"></script>
+    <script src="/js/site.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+           
+            var toastLiveExample = $('.toast')
+            for (var i = 0; i < toastLiveExample.length; i++) {
+                var toast = new bootstrap.Toast(toastLiveExample[i]);
+                toast.show()
+            }
+           
+        });
+    </script>
+    
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
