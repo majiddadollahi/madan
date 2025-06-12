@@ -1,0 +1,78 @@
+@model madan.MVC.Data.Models.Product
+
+@{
+    ViewData["Title"] = "جزئیات محصول";
+}
+
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col">
+            <div class="d-flex align-items-center">
+                <h2 class="mb-0">@ViewData["Title"] - @Model.Name</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-3">نام محصول</dt>
+                        <dd class="col-sm-9">@Model.Name</dd>
+
+                        <dt class="col-sm-3">وضعیت</dt>
+                        <dd class="col-sm-9">
+                            @if (Model.IsActive)
+                            {
+                                <span class="badge badge-success">فعال</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-danger">غیرفعال</span>
+                            }
+                        </dd>
+                    </dl>
+
+                    <div class="mt-4">
+                        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">
+                            <i class="fas fa-edit"></i>
+                            ویرایش
+                        </a>
+                        <a asp-action="Index" class="btn btn-outline-secondary">
+                            <i class="fas fa-arrow-right"></i>
+                            بازگشت به لیست
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .card {
+            border: none;
+            border-radius: 10px;
+        }
+        
+        .card-body {
+            padding: 2rem;
+        }
+        
+        dt {
+            font-weight: 600;
+            color: #6c757d;
+        }
+        
+        .badge {
+            padding: 0.5em 1em;
+        }
+        
+        .btn {
+            padding: 0.5rem 1rem;
+            margin-right: 0.5rem;
+        }
+    </style>
+} 

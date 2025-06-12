@@ -1,4 +1,0 @@
-﻿namespace madan.MVC.Models
-{
-   
-}
